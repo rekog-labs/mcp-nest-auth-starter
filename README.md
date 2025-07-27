@@ -1,5 +1,7 @@
 # MCP NestJS Auth Starter
 
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/G6BLGK?referralCode=XAdIhJ)
+
 A robust starter template for building scalable, production-ready APIs using [NestJS](https://nestjs.com/) and the [Model Context Protocol (MCP)](https://github.com/rekog-labs/model-context-protocol). This project provides a solid foundation for rapid development of secure, context-aware applications, featuring:
 
 - **NestJS**: Progressive Node.js framework for building efficient server-side applications.
