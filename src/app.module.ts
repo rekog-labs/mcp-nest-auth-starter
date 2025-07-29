@@ -6,6 +6,7 @@ import { GreetingPrompt } from './resources/greeting.prompt';
 import { GreetingResource } from './resources/greeting.resource';
 import { GreetingTool } from './resources/greeting.tool';
 import { McpAuthJwtGuard } from '@rekog/mcp-nest/dist/authz/guards/jwt-auth.guard';
+import { randomUUID } from 'crypto';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
@@ -50,7 +51,12 @@ dotenv.config();
 
     McpModule.forRoot({
       name: 'my-mcp-server',
-      version: '1.0.0',
+      version: '1.0.0',      
+      streamableHttp: {
+        enableJsonResponse: false,
+        sessionIdGenerator: () => randomUUID(),
+        statelessMode: false,
+      },
       guards: [McpAuthJwtGuard],
     }),
   ],
