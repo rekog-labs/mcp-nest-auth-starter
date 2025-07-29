@@ -19,6 +19,7 @@ dotenv.config();
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
       jwtSecret: process.env.JWT_SECRET!,
       serverUrl: process.env.SERVER_URL,
+      resource: process.env.SERVER_URL + '/mcp',
       cookieSecure: process.env.NODE_ENV === 'production',
       apiPrefix: 'auth',
       // endpoints: {
@@ -51,7 +52,7 @@ dotenv.config();
 
     McpModule.forRoot({
       name: 'my-mcp-server',
-      version: '1.0.0',      
+      version: '1.0.0',
       streamableHttp: {
         enableJsonResponse: false,
         sessionIdGenerator: () => randomUUID(),
