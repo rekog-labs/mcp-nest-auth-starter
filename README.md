@@ -1,4 +1,4 @@
-# MCP NestJS Auth Starter
+# MCP Nest Auth Starter
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/G6BLGK?referralCode=XAdIhJ)
 
