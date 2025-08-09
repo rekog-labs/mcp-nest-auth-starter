@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { GitHubOAuthProvider, McpAuthModule, McpModule } from '@rekog/mcp-nest';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { GreetingPrompt } from './resources/greeting.prompt';
-import { GreetingResource } from './resources/greeting.resource';
-import { GreetingTool } from './resources/greeting.tool';
+import { GreetingPrompt } from './mcp/greeting.prompt';
+import { GreetingResource } from './mcp/greeting.resource';
+import { GreetingTool } from './mcp/greeting.tool';
 import { McpAuthJwtGuard } from '@rekog/mcp-nest/dist/authz/guards/jwt-auth.guard';
 import { randomUUID } from 'crypto';
 import * as dotenv from 'dotenv';
@@ -22,6 +22,15 @@ dotenv.config();
       resource: process.env.SERVER_URL + '/mcp',
       cookieSecure: process.env.NODE_ENV === 'production',
       apiPrefix: 'auth',
+      endpoints: {
+        wellKnownAuthorizationServerMetadata:
+          '/.well-known/oauth-authorization-server',
+        wellKnownProtectedResourceMetadata: [
+          '/.well-known/oauth-protected-resource/mcp',
+          '/.well-known/oauth-protected-resource',
+        ],
+      },
+
       // endpoints: {
       //   wellKnown: '/.well-known/oauth-authorization-server',
       //   callback: '/remote-auth/auth/callback',
@@ -63,6 +72,5 @@ dotenv.config();
   ],
   controllers: [AppController],
   providers: [AppService, GreetingPrompt, GreetingResource, GreetingTool],
-
 })
 export class AppModule {}

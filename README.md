@@ -14,15 +14,17 @@ The fastest way to get started is to deploy the project on by clicking the butto
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/G6BLGK?referralCode=XAdIhJ)
 
-Create a GitHub OAuth application to obtain your `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`.
-You can create a github application at [New GitHub App](https://github.com/settings/applications/new).
-You won't know the "Authorization callback URL" until you deploy the app, so you can set it to `http://localhost:3000/auth/callback` and create the app. Get the Client ID and the Client Secret and complete the deployment.
+For the deployment you need the following:
 
-After you have the Custom Domain of the railway deployment update the "Authorization callback URL" of the GitHub app to `https://<your-app-name>.up.railway.app/auth/callback`.
+1. Create a [New GitHub App](https://github.com/settings/applications/new) used for user authentication
+2. For the "Authorization callback URL" add the placeholder `http://localhost:3000/auth/callback` and create the app.
+3. Add the details in the Deploy panel on Railway, and click "Deploy"
+4. After the app is deployed, the Custom Domain is available in the railway deployment settings page.
+5. Update the "Authorization callback URL" of the GitHub app to the custom domain with the prefix as shown here: `https://<custom-domain>.up.railway.app/auth/callback`.
 
-After that you are ready to roll! Open MCP Inspector at `https://<your-app-name>.up.railway.app/mcp` to see the available resources and tools.
+After that you are ready to roll! Open MCP Inspector at `https://<custom-domain>.up.railway.app/mcp` to see the available resources and tools.
 
-### Installation
+### Local Installation
 
 Clone the repository and install dependencies:
 
