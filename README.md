@@ -2,11 +2,7 @@
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/G6BLGK?referralCode=XAdIhJ)
 
-A robust starter template for building scalable, production-ready APIs using [NestJS](https://nestjs.com/) and the [Model Context Protocol (MCP)](https://github.com/rekog-labs/model-context-protocol). This project provides a solid foundation for rapid development of secure, context-aware applications, featuring:
-
-- **NestJS**: Progressive Node.js framework for building efficient server-side applications.
-- **MCP Integration**: Out-of-the-box support for Model Context Protocol resources and tools.
-- **Authentication**: Easily extendable authentication layer for secure APIs.
+A starter template for building MCP Servers that implement the MCP Authorization flow.
 
 ## Getting Started
 
@@ -16,13 +12,15 @@ The fastest way to get started is to deploy the project on by clicking the butto
 
 For the deployment you need the following:
 
-1. Create a [New GitHub App](https://github.com/settings/applications/new) used for user authentication
-2. For the "Authorization callback URL" add the placeholder `http://localhost:3000/auth/callback` and create the app.
-3. Add the details in the Deploy panel on Railway, and click "Deploy"
+1. Create a [New GitHub App](https://github.com/settings/applications/new), required for user authentication
+    * For the "Authorization callback URL" add the placeholder `http://localhost:3000/auth/callback` and create the app, you will update it at step 5.
+3. Add the GitHub Client ID and Client Secret in the Deploy panel on Railway, and click "Deploy"
 4. After the app is deployed, the Custom Domain is available in the railway deployment settings page.
-5. Update the "Authorization callback URL" of the GitHub app to the custom domain with the prefix as shown here: `https://<custom-domain>.up.railway.app/auth/callback`.
+5. Update the "Authorization callback URL" of the GitHub app to the custom domain with the postfix as shown here: `https://<custom-domain>.up.railway.app/auth/callback`.
 
-After that you are ready to roll! Open MCP Inspector at `https://<custom-domain>.up.railway.app/mcp` to see the available resources and tools.
+**And you are ready to roll!**
+
+Open MCP Inspector at `https://<custom-domain>.up.railway.app/mcp` to see the available resources and tools.
 
 ### Local Installation
 
