@@ -6,7 +6,7 @@ A starter template for building MCP Servers that implement the MCP Authorization
 
 ## Getting Started
 
-The fastest way to get started is to deploy the project on by clicking the button below to deploy:
+The fastest way to try out Remote MCP servers with built-in authentication is by deploying on Railway with the template below:
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/G6BLGK?referralCode=XAdIhJ)
 
@@ -14,9 +14,9 @@ For the deployment you need the following:
 
 1. Create a [New GitHub App](https://github.com/settings/applications/new), required for user authentication
     * For the "Authorization callback URL" add the placeholder `http://localhost:3000/auth/callback` and create the app, you will update it at step 5.
-3. Add the GitHub Client ID and Client Secret in the Deploy panel on Railway, and click "Deploy"
-4. After the app is deployed, the Custom Domain is available in the railway deployment settings page.
-5. Update the "Authorization callback URL" of the GitHub app to the custom domain with the postfix as shown here: `https://<custom-domain>.up.railway.app/auth/callback`.
+2. Add the GitHub Client ID and Client Secret in the Deploy panel on Railway, and click "Deploy"
+3. After the app is deployed, the Custom Domain is available in the railway deployment settings page.
+4. Update the "Authorization callback URL" of the GitHub app to the custom domain with the postfix as shown here: `https://<custom-domain>.up.railway.app/auth/callback`.
 
 **And you are ready to roll!**
 
